@@ -29,10 +29,25 @@
         <!-- Contenedor donde el JS inyectará los recuerdos -->
         <div id="timeline-container"></div>
 
-        <!-- Botón para la sorpresa final -->
-        <div class="final-section">
-            <button id="open-letter-btn">Tengo algo más que decirte...</button>
+        <!-- Sección Final con Trivia (MODIFICADO) -->
+        <div class="final-section" id="trivia-section">
+            <h2 style="color: #ff4d85; margin-bottom: 20px;">Antes de la sorpresa final...</h2>
+            <div class="card" style="margin-bottom: 20px; z-index: 10;">
+                <p style="font-size: 18px; margin-bottom: 20px;">
+                    ¿Quién es mejor novio?
+                </p>
+                <div style="position: relative; height: 100px;">
+                    <button id="btn-correcto" class="trivia-btn">Yo</button>
+                    <!-- El botón incorrecto tendrá posicionamiento absoluto para poder moverse -->
+                    <button id="btn-incorrecto" class="trivia-btn" style="position: absolute; left: 50%; transform: translateX(50%);">Tú</button>
+                </div>
+            </div>
+            
+            <!-- El botón de la carta ahora está oculto inicialmente -->
+            <button id="open-letter-btn" class="hidden">Tengo algo más que decirte...</button>
         </div>
+
+
     </div>
 
     <!-- Modal de la Carta Final (Oculto al inicio) -->

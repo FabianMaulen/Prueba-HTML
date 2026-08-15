@@ -50,6 +50,7 @@ btnUnlock.addEventListener('click', () => {
             
             // Renderizar los recuerdos y mostrar pantalla principal
             renderizarRecuerdos();
+            setInterval(crearCorazon, 300); // Crea un corazón cada 300ms
             
             setTimeout(() => {
                 mainContent.style.opacity = '1';
@@ -97,4 +98,70 @@ btnOpenLetter.addEventListener('click', () => {
 
 btnCloseModal.addEventListener('click', () => {
     letterModal.classList.add('hidden');
+});
+
+// --- LÓGICA DE LA LLUVIA DE CORAZONES (NUEVO) ---
+function crearCorazon() {
+    const corazon = document.createElement('div');
+    corazon.innerHTML = '❤️'; // El emoji del corazón
+    corazon.classList.add('heart');
+    
+    // Posición horizontal aleatoria
+    corazon.style.left = Math.random() * 100 + 'vw';
+    
+    // Tamaño aleatorio para dar profundidad
+    const size = Math.random() * 15 + 10;
+    corazon.style.fontSize = size + 'px';
+    
+    // Duración de la caída aleatoria (entre 3 y 8 segundos)
+    corazon.style.animationDuration = Math.random() * 5 + 3 + 's';
+    
+    document.body.appendChild(corazon);
+    
+    // Eliminar el corazón cuando termine la animación para no saturar el navegador
+    setTimeout(() => {
+        corazon.remove();
+    }, 8000); 
+}
+
+// --- LÓGICA DE LA TRIVIA BROMISTA (NUEVO) ---
+const btnIncorrecto = document.getElementById('btn-incorrecto');
+const btnCorrecto = document.getElementById('btn-correcto');
+const btnOpenLetterReal = document.getElementById('open-letter-btn'); // Renombrado por claridad
+
+// El botón incorrecto huye del mouse (para escritorio)
+btnIncorrecto.addEventListener('mouseover', huir);
+// Y huye cuando intentan tocarlo (para móviles)
+btnIncorrecto.addEventListener('touchstart', huir, {passive: true});
+
+function huir() {
+    // Calculamos una nueva posición aleatoria dentro de la tarjeta
+    // Para que no se salga de la pantalla, limitamos el rango
+    const maxWidth = 150; 
+    const maxHeight = 80;
+    
+    // Valores entre negativo y positivo para moverlo en cualquier dirección
+    const randomX = Math.floor(Math.random() * maxWidth) - (maxWidth / 2);
+    const randomY = Math.floor(Math.random() * maxHeight) - (maxHeight / 2);
+    
+    // Aplicamos la nueva posición
+    btnIncorrecto.style.transform = `translate(${randomX}px, ${randomY}px)`;
+}
+
+// Lógica cuando acierta la pregunta
+btnCorrecto.addEventListener('click', () => {
+    // Cambiamos el estilo para mostrar que ganó
+    btnCorrecto.style.backgroundColor = '#4caf50'; // Verde de éxito
+    btnCorrecto.innerText = '¡Correcto! ❤️';
+    btnIncorrecto.style.display = 'none'; // Ocultamos el botón tramposo
+    
+    // Mostramos el botón real de la carta con un pequeño delay
+    setTimeout(() => {
+        btnOpenLetterReal.classList.remove('hidden');
+    }, 1000);
+});
+
+// El evento para abrir el modal (que ya tenías, asegúrate de conectarlo al botón correcto)
+btnOpenLetterReal.addEventListener('click', () => {
+    letterModal.classList.remove('hidden');
 });
