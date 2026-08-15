@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Para ti ❤️</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <!-- Pantalla de Bloqueo -->
+    <div id="login-screen" class="screen">
+        <div class="card">
+            <h1>Hola, hermosa</h1>
+            <p>Para entrar, ingresa nuestra fecha especial (DD/MM/YY):</p>
+            <input type="password" id="password" placeholder="Ej: 1402" maxlength="4">
+            <button id="unlock-btn">Desbloquear</button>
+            <p id="error-msg" class="hidden">Esa no es la fecha correcta 🤨, acaso ya no me amas :c </p>
+        </div>
+    </div>
+
+    <!-- Contenido Principal (Oculto al inicio) -->
+    <div id="main-content" class="screen hidden">
+        <header>
+            <h1>Nuestra Historia</h1>
+            <p>Un pequeño recorrido por nuestros mejores momentos</p>
+        </header>
+        
+        <!-- Contenedor donde el JS inyectará los recuerdos -->
+        <div id="timeline-container"></div>
+
+        <!-- Botón para la sorpresa final -->
+        <div class="final-section">
+            <button id="open-letter-btn">Tengo algo más que decirte...</button>
+        </div>
+    </div>
+
+    <!-- Modal de la Carta Final (Oculto al inicio) -->
+    <div id="letter-modal" class="modal hidden">
+        <div class="modal-content">
+            <span id="close-modal" class="close-btn">&times;</span>
+            <h2>Para mi niña hermosa</h2>
+            <p>
+                Aquí puedes escribir todo lo que sientes por ella. Como es texto HTML, 
+                puedes usar etiquetas &lt;br&gt; para saltos de línea.<br><br>
+                Eres lo mejor que me ha pasado y quería hacerte este pequeño 
+                detalle programado con mucho amor. Te amo muchísimo.
+            </p>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

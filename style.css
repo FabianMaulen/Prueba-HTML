@@ -1,0 +1,194 @@
+/* Reset básico y tipografía */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+    /* Degradado oscuro elegante (negro a gris muy oscuro) */
+    background: linear-gradient(135deg, #1a1a1d 0%, #000000 100%);
+    min-height: 100vh;
+    color: #f0f0f0; /* Texto claro para contrastar con el fondo */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+/* Clases de utilidad */
+.screen {
+    width: 100%;
+    max-width: 600px;
+    padding: 20px;
+    transition: opacity 0.8s ease;
+}
+
+.hidden {
+    display: none !important;
+    opacity: 0;
+}
+
+/* Pantalla de Login */
+#login-screen {
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.card {
+    background: #151515; /* Fondo oscuro para la tarjeta */
+    padding: 40px;
+    border-radius: 15px;
+    /* Sombra con un toque rosado brillante */
+    box-shadow: 0 10px 30px rgba(255, 77, 133, 0.15); 
+    text-align: center;
+    width: 100%;
+    border: 1px solid #333;
+}
+
+h1 {
+    color: #ff4d85; /* Rosado vibrante/neón */
+    margin-bottom: 10px;
+}
+
+input {
+    padding: 12px;
+    width: 80%;
+    margin: 20px 0;
+    background-color: #222; /* Input oscuro */
+    color: #fff;
+    border: 2px solid #ff4d85; /* Borde rosado */
+    border-radius: 8px;
+    font-size: 18px;
+    text-align: center;
+    outline: none;
+    transition: box-shadow 0.3s;
+}
+
+input:focus {
+    /* Brillo rosado al escribir */
+    box-shadow: 0 0 10px rgba(255, 77, 133, 0.4);
+}
+
+button {
+    background-color: #ff4d85;
+    color: #000; /* Texto negro para contraste agresivo y moderno */
+    border: none;
+    padding: 12px 25px;
+    font-size: 16px;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background 0.3s, transform 0.2s;
+    font-weight: bold;
+}
+
+button:hover {
+    background-color: #ff75a0; /* Rosado más claro al pasar el mouse */
+    transform: scale(1.05); /* Pequeño zoom */
+}
+
+#error-msg {
+    color: #ff4d85;
+    margin-top: 15px;
+    font-size: 14px;
+}
+
+/* Header del contenido principal */
+header {
+    text-align: center;
+    margin-top: 30px;
+    margin-bottom: 40px;
+}
+
+header p {
+    color: #b0b0b0; /* Gris claro */
+}
+
+/* Línea de tiempo y Recuerdos */
+.memory-card {
+    background: #151515; /* Tarjeta oscura */
+    border-radius: 15px;
+    padding: 20px;
+    margin-bottom: 30px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.5);
+    border-top: 5px solid #ff4d85; /* Línea superior rosada */
+}
+
+.memory-date {
+    color: #ff75a0; /* Fecha en rosado suave */
+    font-size: 14px;
+    margin-bottom: 10px;
+    display: block;
+    font-weight: bold;
+}
+
+.memory-title {
+    font-size: 20px;
+    color: #ffffff; /* Título blanco */
+    margin-bottom: 15px;
+}
+
+.memory-img {
+    width: 100%;
+    border-radius: 10px;
+    margin-bottom: 15px;
+    object-fit: cover;
+    max-height: 400px;
+    border: 1px solid #333; /* Borde sutil para la foto */
+}
+
+.memory-text {
+    line-height: 1.6;
+    color: #cccccc; /* Texto descriptivo en gris claro */
+}
+
+/* Sección Final */
+.final-section {
+    text-align: center;
+    margin: 50px 0;
+}
+
+/* Modal de la Carta */
+.modal {
+    position: fixed;
+    top: 0; left: 0; width: 100%; height: 100%;
+    background: rgba(0, 0, 0, 0.85); /* Fondo oscuro semitransparente */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+}
+
+.modal-content {
+    background: #151515;
+    padding: 40px;
+    border-radius: 15px;
+    width: 90%;
+    max-width: 500px;
+    position: relative;
+    box-shadow: 0 10px 30px rgba(255, 77, 133, 0.2);
+    line-height: 1.8;
+    color: #f0f0f0;
+    border: 1px solid #ff4d85; /* Borde rosado brillante */
+}
+
+.modal-content h2 {
+    color: #ff4d85;
+    margin-bottom: 15px;
+}
+
+.close-btn {
+    position: absolute;
+    top: 15px;
+    right: 20px;
+    font-size: 28px;
+    cursor: pointer;
+    color: #ff4d85;
+    transition: color 0.3s;
+}
+
+.close-btn:hover {
+    color: #fff;
+}
