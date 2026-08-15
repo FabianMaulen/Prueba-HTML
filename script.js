@@ -165,3 +165,63 @@ btnCorrecto.addEventListener('click', () => {
 btnOpenLetterReal.addEventListener('click', () => {
     letterModal.classList.remove('hidden');
 });
+
+
+// --- LÓGICA DEL CONTADOR DE TIEMPO (NUEVO) ---
+// Formato: Año, Mes (0-11, así que Septiembre es 8), Día, Hora, Minuto, Segundo
+const fechaInicio = new Date(2023, 8, 11, 0, 0, 0); 
+
+function actualizarContador() {
+    const ahora = new Date();
+    
+    let años = ahora.getFullYear() - fechaInicio.getFullYear();
+    let meses = ahora.getMonth() - fechaInicio.getMonth();
+    let dias = ahora.getDate() - fechaInicio.getDate();
+    let horas = ahora.getHours() - fechaInicio.getHours();
+    let minutos = ahora.getMinutes() - fechaInicio.getMinutes();
+    let segundos = ahora.getSeconds() - fechaInicio.getSeconds();
+
+    // Ajustar si los segundos son negativos
+    if (segundos < 0) {
+        minutos--;
+        segundos += 60;
+    }
+    // Ajustar si los minutos son negativos
+    if (minutos < 0) {
+        horas--;
+        minutos += 60;
+    }
+    // Ajustar si las horas son negativas
+    if (horas < 0) {
+        dias--;
+        horas += 24;
+    }
+    // Ajustar si los días son negativos
+    if (dias < 0) {
+        meses--;
+        // Calcular cuántos días tenía el mes anterior
+        const mesAnterior = new Date(ahora.getFullYear(), ahora.getMonth(), 0);
+        dias += mesAnterior.getDate();
+    }
+    // Ajustar si los meses son negativos
+    if (meses < 0) {
+        años--;
+        meses += 12;
+    }
+
+    // Inyectar los valores en el HTML solo si existen los contenedores
+    const elYears = document.getElementById('years');
+    if (elYears) {
+        elYears.innerText = años;
+        document.getElementById('months').innerText = meses;
+        document.getElementById('days').innerText = dias;
+        document.getElementById('hours').innerText = horas;
+        document.getElementById('minutes').innerText = minutos;
+        document.getElementById('seconds').innerText = segundos;
+    }
+}
+
+// Ejecutar el contador cada segundo (1000 milisegundos)
+setInterval(actualizarContador, 1000);
+// Llamar a la función inmediatamente para que no aparezcan ceros al inicio
+actualizarContador();
