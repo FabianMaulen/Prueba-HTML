@@ -5,22 +5,22 @@ const CLAVE_SECRETA = "1402"; // Tu clave de acceso
 // Si un recuerdo no tiene foto, simplemente deja las comillas vacías en 'foto': ""
 const recuerdos = [
     {
-        fecha: "14 de Febrero, 2024",
+        fecha: "11 de Septiembre, 2024",
         titulo: "Nuestro primer aniversario",
-        texto: "Ese día fue mágico. Recuerdo lo nerviosos que estábamos, pero fue el inicio de lo mejor de mi vida.",
-        foto: "fotos/foto1.jpg" // Asegúrate de que la foto exista en tu carpeta 'fotos'
+        texto: "Ese día fue mágico. Recuerdo lo nerviosos que estábamos, pero fue un dia hermoso.",
+        foto: "fotos/foto1.jpg" 
     },
     {
-        fecha: "20 de Mayo, 2024",
-        titulo: "Aquel viaje improvisado",
-        texto: "No teníamos nada planeado y terminó siendo uno de mis fines de semana favoritos contigo.",
+        fecha: "4 de diciembre, 2024",
+        titulo: "Aquel viaje a las dunaas",
+        texto: "No teníamos nada planeado y terminó siendo un dia muy lindo pero con mucho viento .",
         foto: "fotos/foto2.jpg"
     },
     {
         fecha: "Hoy y siempre",
         titulo: "Cada momento a tu lado",
         texto: "Incluso los días normales se vuelven especiales cuando estamos juntos. No necesito grandes planes si te tengo a ti.",
-        foto: "" // Este recuerdo no mostrará imagen
+        foto: "fotos/foto1.jpg" // Este recuerdo no mostrará imagen
     }
 ];
 
