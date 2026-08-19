@@ -7,13 +7,14 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-
+    <!-- Botón Modo Día/Noche -->
+    <button id="theme-toggle" class="theme-btn">☀️ Modo Día</button>
     <!-- Pantalla de Bloqueo -->
     <div id="login-screen" class="screen">
         <div class="card">
             <h1>Hola, hermosa</h1>
             <p>Para entrar, ingresa nuestra fecha especial (DD/MM/YY):</p>
-            <input type="password" id="password" placeholder="Ej: 1402" maxlength="4">
+            <input type="password" id="password" placeholder="Ej: 1402" maxlength="6">
             <button id="unlock-btn">Desbloquear</button>
             <p id="error-msg" class="hidden">Esa no es la fecha correcta 🤨, acaso ya no me amas :c </p>
         </div>
@@ -53,10 +54,11 @@
                 <p style="font-size: 18px; margin-bottom: 20px;">
                     ¿Quién es mejor novio?
                 </p>
-                <div style="position: relative; height: 100px;">
-                    <button id="btn-correcto" class="trivia-btn">Yo</button>
-                    <!-- El botón incorrecto tendrá posicionamiento absoluto para poder moverse -->
-                    <button id="btn-incorrecto" class="trivia-btn" style="position: absolute; left: 50%; transform: translateX(50%);">Tú</button>
+                <!-- ESTE ES EL CONTENEDOR QUE ARREGLAMOS -->
+                <div style="display: flex; justify-content: center; align-items: center; gap: 30px; position: relative; height: 80px;">
+                    <button id="btn-correcto" class="trivia-btn">Fabi</button>
+                    <!-- Le quitamos el "position: absolute" para que Flexbox lo centre bien -->
+                    <button id="btn-incorrecto" class="trivia-btn" style="position: relative;">Marti</button>
                 </div>
             </div>
             

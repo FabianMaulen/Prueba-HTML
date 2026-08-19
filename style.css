@@ -272,3 +272,65 @@ header p {
     margin-top: 5px;
     font-weight: bold;
 }
+/* --- BOTÓN DE TEMA --- */
+.theme-btn {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    background: #222;
+    color: #ff4d85;
+    border: 1px solid #ff4d85;
+    padding: 8px 15px;
+    border-radius: 20px;
+    font-size: 14px;
+    z-index: 100;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+/* --- VARIABLES MODO DÍA --- */
+body.light-mode {
+    background: linear-gradient(135deg, #fdfbfb 0%, #ebedee 100%);
+    color: #333;
+}
+
+body.light-mode .card,
+body.light-mode .memory-card,
+body.light-mode .counter-container,
+body.light-mode .modal-content {
+    background: #ffffff;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+    border-color: #ffb5a7; /* Rosa más suave para el día */
+}
+
+body.light-mode input {
+    background-color: #f9f9f9;
+    color: #333;
+    border-color: #ffb5a7;
+}
+
+body.light-mode h1,
+body.light-mode .memory-title,
+body.light-mode .counter-container h3,
+body.light-mode .modal-content h2 {
+    color: #e63946; /* Un rojo/rosa más oscuro para contraste en fondo blanco */
+}
+
+body.light-mode .memory-text {
+    color: #457b9d; /* Texto descriptivo más amigable */
+}
+
+body.light-mode .time-block {
+    background: #f4f4f4;
+    border-bottom-color: #ff9a9e;
+}
+
+body.light-mode .time-block span {
+    color: #e63946;
+}
+
+body.light-mode .theme-btn {
+    background: #ffffff;
+    color: #e63946;
+    border-color: #e63946;
+}

@@ -1,5 +1,5 @@
 // --- CONFIGURACIÓN DE DATOS ---
-const CLAVE_SECRETA = "1402"; // Tu clave de acceso
+const CLAVE_SECRETA = "110924"; // Tu clave de acceso
 
 // Array de objetos: Aquí agregas todos los recuerdos que quieras.
 // Si un recuerdo no tiene foto, simplemente deja las comillas vacías en 'foto': ""
@@ -225,3 +225,18 @@ function actualizarContador() {
 setInterval(actualizarContador, 1000);
 // Llamar a la función inmediatamente para que no aparezcan ceros al inicio
 actualizarContador();
+
+// --- LÓGICA DEL MODO DÍA / NOCHE (NUEVO) ---
+const themeToggleBtn = document.getElementById('theme-toggle');
+
+themeToggleBtn.addEventListener('click', () => {
+    // Alterna la clase 'light-mode' en el body
+    document.body.classList.toggle('light-mode');
+    
+    // Cambia el texto del botón dependiendo del modo activo
+    if (document.body.classList.contains('light-mode')) {
+        themeToggleBtn.innerText = '🌙 Modo Noche';
+    } else {
+        themeToggleBtn.innerText = '☀️ Modo Día';
+    }
+});
